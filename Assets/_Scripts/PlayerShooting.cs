@@ -85,11 +85,10 @@ public class PlayerShooting : MonoBehaviour {
 					gameController.targetsRemaining -= 1;
 				}
 
-				/*if(hit.transform.CompareTag("Blockade")) {
-					Destroy(hit.transform.gameObject);
-					//Instantiate(this.explosion, hit.point, Quaternion.identity);
-					//gameController.ChangeScore(200);// add 200 points
-				}*/
+				if(hit.transform.CompareTag("LaserBlock")) {
+					Destroy(hit.transform.parent.gameObject);
+					gameController.ChangeScore(300);// add 200 points
+				}
 
 				//move impact particle system to location of ray hit
 				this._impacts[this._currentImpact].transform.position = hit.point;
