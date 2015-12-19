@@ -29,6 +29,9 @@ public class ButtonController : MonoBehaviour {
 			if (GUI.Button (new Rect ((Screen.width / 2) - 50, (Screen.height / 2), 100, 30), "Start Game")) {
 				Invoke ("LoadIt", 0.50f);
 			}
+			if (GUI.Button (new Rect ((Screen.width / 2) - 50, (Screen.height / 2) + 50, 100, 30), "Instructions")) {
+				Invoke ("LoadIt2", 0.50f);
+			}
 		}
 	}
 
@@ -36,6 +39,11 @@ public class ButtonController : MonoBehaviour {
 	public void LoadIt()
 	{
 		Application.LoadLevel(1);
+	}
+	//Method to load scene 4
+	public void LoadIt2()
+	{
+		Application.LoadLevel(4);
 	}
 
 }

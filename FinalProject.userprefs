@@ -1,11 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\PlayerShooting.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\EnemyAI.cs">
     <Files>
-      <File FileName="Assets\_Scripts\GameComplete.cs" Line="21" Column="22" />
+      <File FileName="Assets\_Scripts\ButtonController.cs" Line="32" Column="76" />
+      <File FileName="Assets\_Scripts\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\EnemyAI.cs" Line="7" Column="29" />
       <File FileName="Assets\_Scripts\CubeController_Level2.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\TargetController_Level1.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\PlayerShooting.cs" Line="89" Column="47" />
+      <File FileName="Assets\_Scripts\PlayerShooting.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

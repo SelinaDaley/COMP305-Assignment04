@@ -18,6 +18,7 @@ public class PlayerShooting : MonoBehaviour {
 	public AudioSource bulletImpactSound;
 	public GameObject explosion;
 	public GameController gameController;
+	public EnemyAI enemyAI;
 
 	// PRIVATE INSTANCE VARIABLES 
 	private GameObject[] _impacts;
@@ -88,6 +89,14 @@ public class PlayerShooting : MonoBehaviour {
 				if(hit.transform.CompareTag("LaserBlock")) {
 					Destroy(hit.transform.parent.gameObject);
 					gameController.ChangeScore(300);// add 200 points
+				}
+
+				if(hit.transform.CompareTag("Lion")) {
+					Animator _anim = hit.transform.gameObject.GetComponent<Animator> ();
+					_anim.Play ("Li_Dead");
+					enemyAI.LionDeath();
+					//Destroy(hit.transform.parent.gameObject);
+					//gameController.ChangeScore(300);// add 200 points
 				}
 
 				//move impact particle system to location of ray hit

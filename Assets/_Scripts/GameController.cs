@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour {
 	private int _scoreValue;
 	private float _timeValue;
 	private float _timeRemaining;
+	private bool _complete;
 
 	// Use this for initialization
 	void Start () {
@@ -48,6 +49,8 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		_timeValue = Mathf.RoundToInt (Time.timeSinceLevelLoad);
+
+		if(_complete == false)
 		_timeRemaining = totalTime - _timeValue;
 
 		// Used to check if the player has run out of time
@@ -68,12 +71,15 @@ public class GameController : MonoBehaviour {
 			if(Input.GetKeyDown(KeyCode.R)) {
 				Application.LoadLevel(Application.loadedLevel);
 			}
+			if(Input.GetKeyDown(KeyCode.M)) {
+				Application.LoadLevel(0);
+			}
 		}
 
 		// Used to let the player know that the game is over
 		if(gameOver) 
 		{
-			restartLabel.text = "Press 'R' to restart the game";
+			restartLabel.text = "Press 'R' to restart the game\nPress 'M' to go to the main menu";
 			_restart = true;
 		}		
 	}
@@ -114,4 +120,15 @@ public class GameController : MonoBehaviour {
 		gameOverLabel.text = "Game Over!";
 		gameOver = true;
 	}
+
+	public void GameComplete()
+	{
+		player.GetComponent<CharacterController>().Move( new Vector3 (0,0,0));
+		player.GetComponent<CharacterController>().enabled = false;
+		_complete = true;
+		gameOverLabel.text = "Level Complete!"; 
+		restartLabel.text = "Loading next level...";
+	}
+
+
 }
